@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ConvertButton from './components/ConvertButton';
 import Degrees from './components/Degrees'
 import TempType from './components/TempType';
 
@@ -14,46 +15,49 @@ export default function App() {
 
         <View style={styles.items}>
           {/*converter components*/}
-            <View style={styles.row}>
-              <View style={styles.col}>
-                <Degrees />
-              </View>
-              <View style={styles.col}>
-                <TempType />
-              </View>
+          <View style={styles.row}>
+            <View style={styles.col}>
+              <Degrees />
             </View>
-        </View>
-</View>
+            <View style={styles.col}>
+              <TempType />
+            </View>
+          </View><View>
+        <ConvertButton />
       </View>
-      );
+        </View>
+      </View>
+      
+    </View>
+  );
 }
 
-      const styles = StyleSheet.create({
-        container: {
-        flex: 1,
-      backgroundColor: '#e0e6ea',
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#e0e6ea',
   },
-      converterWrapper: {
-        paddingTop: 80,
-      paddingHorizontal: 20,
+  converterWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
   },
-      sectionTitle: {
-        fontSize: 24,
-      fontWeight: 'bold',
-      textAlign: 'center',
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
-      items: {
-       
-      },
-      degrees: {
+  items: {
 
-      },
-      row: {
-        flexDirection: 'row',
-        paddingVertical: 30,
-        paddingHorizontal: 10,
-      },
-      col: {
-       
-      },
+  },
+  degrees: {
+
+  },
+  row: {
+    flexDirection: 'row',
+    paddingVertical: 30,
+    paddingHorizontal: 10,
+  },
+  col: {
+
+  },
 });
