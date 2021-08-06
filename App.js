@@ -51,9 +51,9 @@ export default function App() {
       row: {
         flexDirection: 'row',
         paddingVertical: 30,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
       },
       col: {
-        paddingRight: 30,
+       
       },
 });
