@@ -1,14 +1,53 @@
 import { Button } from 'react-native-elements';
-import React from 'react';
-import {View, Text} from 'react-native';
+import { View, StyleSheet, Text, TextInput } from 'react-native';
+import React, { useState } from 'react';
 
 
-const ConvertButton = () => {
+export default function ConvertButton() {
+    const [degreeInput, setDegrees] = useState('');
+    const txtHandler = (inputText) => {
+        setDegrees(inputText)
+    };
+
+    const btnConvert = () => {
+        var results = (degreeInput - 32) * 5 / 9;
+        alert(results);
+    };
+
     return (
-        <Button
-  title="Convert"
-/>
-    )
+        <View>
+            <View style={styles.item}>
+                <View>
+                    <Text style={styles.text}>Degrees in Fahrenheit</Text>
+                </View>
+                <TextInput
+                    placeholder="Please enter Degrees in Fahrenheit"
+                    keyboardType={'numeric'}
+                    type="number"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value={degreeInput}
+                    onChangeText={txtHandler}
+                />
+            </View>
+            <Button title="Convert" onPress={btnConvert} />
+        </View>
+    );
 }
 
-export default ConvertButton;
+const styles = StyleSheet.create({
+    item: {
+        backgroundColor: 'white',
+        paddingVertical: 30,
+        paddingHorizontal: 30,
+        borderRadius: 10
+    },
+   
+    text: {
+        paddingBottom: 10,
+        color: 'black',
+        opacity: .3,
+        fontSize: 20
+    },
+ 
+});

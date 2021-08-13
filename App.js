@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ConvertButton from './components/ConvertButton';
-import Degrees from './components/Degrees'
-import TempType from './components/TempType';
+
 
 
 export default function App() {
@@ -11,23 +10,16 @@ export default function App() {
 
       {/* Temperature Converter */}
       <View style={styles.converterWrapper}>
-        <Text style={styles.sectionTitle}>Temperature Converter</Text>
+        <Text style={styles.sectionTitle}>Fahrenheit to Celcius </Text>
 
         <View style={styles.items}>
           {/*converter components*/}
-          <View style={styles.row}>
-            <View style={styles.col}>
-              <Degrees />
-            </View>
-            <View style={styles.col}>
-              <TempType />
-            </View>
-          </View><View>
-        <ConvertButton />
-      </View>
+          <View>
+            {/*Button*/}
+            <ConvertButton />
+          </View>
         </View>
       </View>
-      
     </View>
   );
 }
@@ -47,7 +39,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   items: {
-
+    padding: 20,
   },
   degrees: {
 
@@ -55,7 +47,8 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     paddingVertical: 30,
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
+
   },
   col: {
 
